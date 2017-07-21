@@ -49,11 +49,26 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId())
+
+        int id=item.getItemId();
+
+//        switch (item.getItemId())
+//        {
+//            case R.id.search:
+//                Intent intent=new Intent(MainActivity.this,SearchActivity.class);
+//                startActivity(intent);
+//
+//
+//        }
+
+        if (id == R.id.search) {
+            Intent intent=new Intent(MainActivity.this,SearchActivity.class);
+            startActivity(intent);
+        }
+        else
+        if(id==R.id.info)
         {
-            case R.id.search:
-                Intent intent=new Intent(MainActivity.this,SearchActivity.class);
-                startActivity(intent);
+
         }
 
         return super.onOptionsItemSelected(item);
