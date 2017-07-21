@@ -42,7 +42,7 @@ public class cinemasAdapter extends ArrayAdapter<cinemas> {
 
 
         tvprice.setText(cinemas.getName());
-      Picasso.with(getContext()).load("https://delhiguide.000webhostapp.com/"+cinemas.getUrl()).into(imageView);
+        Picasso.with(getContext()).load("https://delhiguide.000webhostapp.com/"+cinemas.getUrl()).into(imageView);
        // tvprice.setText(String.valueOf(cinemas.getPhone()));
         return view;
 

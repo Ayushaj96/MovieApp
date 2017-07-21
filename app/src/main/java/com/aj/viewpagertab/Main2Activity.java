@@ -20,7 +20,8 @@ ImageView img,imageView;
         String title=intent.getStringExtra("title");
         String overview=intent.getStringExtra("overview");
         String backdrop=intent.getStringExtra("backdrop_path");
-imageView=(ImageView)findViewById(R.id.image1);
+
+        imageView=(ImageView)findViewById(R.id.image1);
         txt=(TextView)findViewById(R.id.textView);
         textView=(TextView)findViewById(R.id.textView7);
          img=(ImageView)findViewById(R.id.image);

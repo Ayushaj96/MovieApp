@@ -24,7 +24,7 @@
             android:autoText="true"
             android:layout_marginBottom="10dp"
             android:background="@color/cardview_light_background"
-            android:hint="Search Movie Here" />
+            android:hint=" Search movies here..." />
 
         <ImageView
             android:id="@+id/imageView2"
