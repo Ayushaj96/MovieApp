@@ -8,7 +8,7 @@ public class cinemas {
     private String name;
     private long phone;
     private String address1;
-private String url;
+    private String url;
 
     public void setUrl(String url) {
         this.url = url;

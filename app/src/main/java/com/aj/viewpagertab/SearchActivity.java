@@ -23,9 +23,9 @@ import java.nio.charset.Charset;
 
 public class SearchActivity extends AppCompatActivity {
 EditText editText;
-    ImageView imageView,imageView2;
+    ImageView imageView,imageView2,imageView3;
     movie m;
-    TextView textView,txt;
+    TextView textView,txt,textView2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,15 +33,17 @@ EditText editText;
         editText=(EditText)findViewById(R.id.editText);
         textView=(TextView)findViewById(R.id.textView8);
         txt=(TextView)findViewById(R.id.about);
+        textView2=(TextView)findViewById(R.id.textView9);
+
         imageView=(ImageView)findViewById(R.id.imageView);
+        imageView3=(ImageView)findViewById(R.id.image1);
         imageView2=(ImageView)findViewById(R.id.imageView2);
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name=editText.getText().toString();
                 Log.i("myapp1",""+name);
-                new Download().execute("https://api.themoviedb.org/3/search/movie?query="+name+"&api_key=55957fcf3ba81b137f8fc01ac5a31fb5",
-                        "https://api.themoviedb.org/3/search/tv?query="+name+"&api_key=55957fcf3ba81b137f8fc01ac5a31fb5");
+                new Download().execute("https://api.themoviedb.org/3/search/movie?query="+name+"&api_key=55957fcf3ba81b137f8fc01ac5a31fb5" );
 
             }
         });
@@ -95,6 +97,8 @@ EditText editText;
                 JSONObject p = contacts.getJSONObject(0);
                 m.setTitle(p.getString("title"));
               m.setOverview(p.getString("overview"));
+                    m.setVote_average(p.getDouble("vote_average"));
+                    m.setBackdrop_path(p.getString("backdrop_path"));
                // m.setRelease_date(p.getString("release_date"));
                 m.setPoster_path(p.getString("poster_path"));
 
@@ -103,8 +107,11 @@ EditText editText;
                         @Override
                         public void run() {
                                    txt.setText(m.getOverview());
+                            textView2.setText(String.valueOf(m.getVote_average()));
                             //     tv1.setText(m.getRelease_date());
                             textView.setText(m.getTitle());
+                            Picasso.with(getApplicationContext()).load("https://image.tmdb.org/t/p/w780/" + m.getBackdrop_path()).into(imageView3);
+
                             Picasso.with(getApplicationContext()).load("https://image.tmdb.org/t/p/w780/" + m.getPoster_path()).into(imageView);
                             Log.i("myapp1", "" + m.getPoster_path());
                         }

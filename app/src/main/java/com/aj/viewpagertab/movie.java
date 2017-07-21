@@ -11,6 +11,17 @@ public class movie {
     private String overview;
     private String backdrop_path;
 
+    public void setVote_average(double vote_average) {
+        this.vote_average = vote_average;
+    }
+
+    public double getVote_average() {
+
+        return vote_average;
+    }
+
+    private double vote_average;
+
     public void setBackdrop_path(String backdrop_path) {
         this.backdrop_path = backdrop_path;
     }
