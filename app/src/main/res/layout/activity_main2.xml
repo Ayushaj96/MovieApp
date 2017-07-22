@@ -38,6 +38,24 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/image"/>
 
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="77dp"
+            android:layout_toEndOf="@+id/image"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView4"
+            android:layout_toEndOf="@+id/imageView4"
+             />
+
     </RelativeLayout>
 
 </ScrollView>

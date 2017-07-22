@@ -42,8 +42,10 @@ public class tab1 extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent=new Intent(getContext(),CinemaActivity.class);
+                intent.putExtra("image",cinemas.get(position).getUrl());
                 intent.putExtra("address",cinemas.get(position).getAddress1());
                 intent.putExtra("phone",cinemas.get(position).getPhone());
+                intent.putExtra("type",cinemas.get(position).getType());
                 startActivity(intent);
 
 
@@ -115,6 +117,7 @@ public class tab1 extends Fragment {
                         Log.i("myapp2",""+cine.getUrl());
                     }
                       cine.setName(p.getString("name"));
+                    cine.setType(p.getString("type"));
                     cine.setPhone(p.getLong("phone"));
                     cine.setAddress1(p.getString("address1"));
                      cinemas.add(cine);

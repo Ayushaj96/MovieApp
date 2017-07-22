@@ -46,6 +46,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                 intent.putExtra("title",mDataset.get(i).getTitle());
                 intent.putExtra("overview",mDataset.get(i).getOverview());
                 intent.putExtra("backdrop_path",mDataset.get(i).getBackdrop_path());
+                intent.putExtra("vote_average",mDataset.get(i).getVote_average());
                 context.startActivity(intent);
                 // Your image click code
 

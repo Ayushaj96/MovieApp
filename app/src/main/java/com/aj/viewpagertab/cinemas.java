@@ -9,6 +9,16 @@ public class cinemas {
     private long phone;
     private String address1;
     private String url;
+    private String type;
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getType() {
+
+        return type;
+    }
 
     public void setUrl(String url) {
         this.url = url;
