@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                     return t3;
 
 
+
                 default:
                     return null;
         }}
@@ -116,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                     return "Tv shows";
                 case 2:
                     return "Cinemas";
+
             }
             return null;
         }

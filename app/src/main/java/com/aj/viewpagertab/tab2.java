@@ -127,7 +127,7 @@ mRecyclerView4=(RecyclerView)view.findViewById(R.id.recycle3);
                     movies.setTitle(p.getString("name"));
                     movies.setOverview(p.getString("overview"));
                     movies.setBackdrop_path(p.getString("backdrop_path"));
-
+                    movies.setVote_average(p.getDouble("vote_average"));
                     movies.setPoster_path(p.getString("poster_path"));
                     Log.i("myapp","" +movies.getPoster_path());
                     mDataset.add(movies);
@@ -196,6 +196,7 @@ mRecyclerView4=(RecyclerView)view.findViewById(R.id.recycle3);
                     movies.setOverview(p.getString("overview"));
                     movies.setPoster_path(p.getString("poster_path"));
                     movies.setBackdrop_path(p.getString("backdrop_path"));
+                    movies.setVote_average(p.getDouble("vote_average"));
 
                     Log.i("myapp","" +movies.getPoster_path());
                     mDataset.add(movies);
@@ -263,6 +264,7 @@ mRecyclerView4=(RecyclerView)view.findViewById(R.id.recycle3);
                     movies.setTitle(p.getString("name"));
                     movies.setOverview(p.getString("overview"));
                     movies.setBackdrop_path(p.getString("backdrop_path"));
+                    movies.setVote_average(p.getDouble("vote_average"));
 
                     movies.setPoster_path(p.getString("poster_path"));
                     Log.i("myapp","" +movies.getPoster_path());
@@ -331,6 +333,7 @@ public class Download extends AsyncTask<String, Void, String> {
                 movies.setTitle(p.getString("name"));
                 movies.setOverview(p.getString("overview"));
                 movies.setBackdrop_path(p.getString("backdrop_path"));
+                movies.setVote_average(p.getDouble("vote_average"));
 
                 movies.setPoster_path(p.getString("poster_path"));
                 Log.i("myapp","" +movies.getPoster_path());

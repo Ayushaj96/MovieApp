@@ -129,6 +129,7 @@ Download2 download2=new Download2();
                     movies.setTitle(p.getString("title"));
                     movies.setBackdrop_path(p.getString("backdrop_path"));
                     movies.setOverview(p.getString("overview"));
+                    movies.setVote_average(p.getDouble("vote_average"));
                     movies.setPoster_path(p.getString("poster_path"));
                     Log.i("myapp","" +movies.getPoster_path());
                     mDataset.add(movies);
@@ -195,7 +196,7 @@ Download2 download2=new Download2();
                     JSONObject p = contacts.getJSONObject(i);
                     movies.setTitle(p.getString("title"));
                     movies.setBackdrop_path(p.getString("backdrop_path"));
-
+                    movies.setVote_average(p.getDouble("vote_average"));
                     movies.setOverview(p.getString("overview"));
                     movies.setPoster_path(p.getString("poster_path"));
                     Log.i("myapp","" +movies.getPoster_path());
@@ -263,7 +264,7 @@ Download2 download2=new Download2();
                     movies.setTitle(p.getString("title"));
                     movies.setOverview(p.getString("overview"));
                     movies.setBackdrop_path(p.getString("backdrop_path"));
-
+                    movies.setVote_average(p.getDouble("vote_average"));
                     movies.setPoster_path(p.getString("poster_path"));
                     Log.i("myapp","" +movies.getPoster_path());
                     mDataset.add(movies);
@@ -329,7 +330,7 @@ Download2 download2=new Download2();
                     movies.setTitle(p.getString("title"));
                     movies.setOverview(p.getString("overview"));
                     movies.setBackdrop_path(p.getString("backdrop_path"));
-
+                    movies.setVote_average(p.getDouble("vote_average"));
                     movies.setPoster_path(p.getString("poster_path"));
                     //Log.i("myapp","" +movies.getPoster_path());
                     mDataset.add(movies);
