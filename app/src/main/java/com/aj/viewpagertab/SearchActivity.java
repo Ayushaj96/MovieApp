@@ -93,37 +93,33 @@ EditText editText;
                 JSONArray contacts = data.getJSONArray("results");
                 for (int i = 0; i < contacts.length(); i++) {
 
-                m = new movie();
-                JSONObject p = contacts.getJSONObject(0);
-                m.setTitle(p.getString("title"));
-              m.setOverview(p.getString("overview"));
+                    m = new movie();
+                    JSONObject p = contacts.getJSONObject(0);
+                    m.setTitle(p.getString("title"));
+                    m.setOverview(p.getString("overview"));
                     m.setVote_average(p.getDouble("vote_average"));
                     m.setBackdrop_path(p.getString("backdrop_path"));
-               // m.setRelease_date(p.getString("release_date"));
-                m.setPoster_path(p.getString("poster_path"));
+                    // m.setRelease_date(p.getString("release_date"));
+                    m.setPoster_path(p.getString("poster_path"));
 
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                                   txt.setText(m.getOverview());
+                            txt.setText(m.getOverview());
                             textView2.setText(String.valueOf(m.getVote_average()));
-                            //     tv1.setText(m.getRelease_date());
+                            //tv1.setText(m.getRelease_date());
                             textView.setText(m.getTitle());
                             Picasso.with(getApplicationContext()).load("https://image.tmdb.org/t/p/w780/" + m.getBackdrop_path()).into(imageView3);
-
                             Picasso.with(getApplicationContext()).load("https://image.tmdb.org/t/p/w780/" + m.getPoster_path()).into(imageView);
                             Log.i("myapp1", "" + m.getPoster_path());
                         }
                     });
 
                 }
-            }
-            catch (Exception e) {
-                Log.i("myapp", "fault:"+e.getMessage());
-
+            } catch (Exception e) {
+                Log.i("myapp", "fault:" + e.getMessage());
             }
 
-        }}
-  }
+        }}}
 
