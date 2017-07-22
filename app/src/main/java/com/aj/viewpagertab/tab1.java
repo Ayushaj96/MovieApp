@@ -46,6 +46,7 @@ public class tab1 extends Fragment {
                 intent.putExtra("address",cinemas.get(position).getAddress1());
                 intent.putExtra("phone",cinemas.get(position).getPhone());
                 intent.putExtra("type",cinemas.get(position).getType());
+                intent.putExtra("name",cinemas.get(position).getName());
                 startActivity(intent);
 
 

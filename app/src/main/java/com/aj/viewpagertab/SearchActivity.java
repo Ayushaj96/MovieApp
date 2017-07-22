@@ -23,7 +23,7 @@ import java.nio.charset.Charset;
 
 public class SearchActivity extends AppCompatActivity {
 EditText editText;
-    ImageView imageView,imageView2,imageView3;
+    ImageView imageView,imageView2,imageView3,imageView4;
     movie m;
     TextView textView,txt,textView2;
     @Override
@@ -38,11 +38,17 @@ EditText editText;
         imageView=(ImageView)findViewById(R.id.imageView);
         imageView3=(ImageView)findViewById(R.id.image1);
         imageView2=(ImageView)findViewById(R.id.imageView2);
+        imageView4=(ImageView)findViewById(R.id.imageView4);
+
+
+
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name=editText.getText().toString();
                 Log.i("myapp1",""+name);
+
+                imageView4.setImageResource(R.drawable.star);
                 new Download().execute("https://api.themoviedb.org/3/search/movie?query="+name+"&api_key=55957fcf3ba81b137f8fc01ac5a31fb5" );
 
             }
