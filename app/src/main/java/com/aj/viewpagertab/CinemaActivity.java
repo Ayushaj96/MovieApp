@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 public class CinemaActivity extends AppCompatActivity {
-TextView textView,textView2,textView3,tvname;
+TextView textView,textView2,textView3;
     ImageView img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +20,8 @@ TextView textView,textView2,textView3,tvname;
         String image=intent.getStringExtra("image");
         String type=intent.getStringExtra("type");
         Long phone=intent.getLongExtra("phone",10);
-        String name=intent.getStringExtra("name");
-
         textView=(TextView)findViewById(R.id.textView4);
         img=(ImageView)findViewById(R.id.imgcinema);
-        tvname=(TextView)findViewById(R.id.tv_name);
-
         Picasso.with(getApplicationContext()).load("https://delhiguide.000webhostapp.com/"+image).into(img);
 
         textView2=(TextView)findViewById(R.id.textView6);
@@ -33,7 +29,6 @@ TextView textView,textView2,textView3,tvname;
         textView3.setText(type);
         textView.setText(address);
         textView2.setText(String.valueOf(phone));
-        tvname.setText(name);
 
     }
 }
