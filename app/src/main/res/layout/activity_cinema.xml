@@ -1,18 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.aj.viewpagertab.CinemaActivity">
-
-     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:id="@+id/imgcinema"
-        android:scaleType="fitXY"/>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -31,33 +17,6 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:layout_marginTop="158dp"
-        android:textSize="20sp"
-        android:text="Address:"
-        android:layout_marginStart="31dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hello"
-        android:layout_below="@+id/imgcinema"
-        android:layout_marginLeft="170dp"
-        android:layout_marginTop="7dp"/>
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="92dp"
-        android:text="Phone no:"
-        android:textSize="25sp"/>
-=======
         android:layout_marginTop="59dp"
         android:background="@color/white"
         app:cardCornerRadius="4dp"
@@ -75,7 +34,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginBottom="30dp">
-
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -175,7 +133,4 @@
 
 
     </android.support.v7.widget.CardView>
-
-
 </RelativeLayout>
-
