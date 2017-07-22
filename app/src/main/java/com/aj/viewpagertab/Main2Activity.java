@@ -21,7 +21,11 @@ ImageView img,imageView;
         String overview=intent.getStringExtra("overview");
         String backdrop=intent.getStringExtra("backdrop_path");
         Double vote=intent.getDoubleExtra("vote_average",3);
+<<<<<<< HEAD
         textView10=(TextView)findViewById(R.id.textView10);
+=======
+       textView10=(TextView)findViewById(R.id.textView10);
+>>>>>>> 3416df20914f1d0cf1544a147530009c9020c895
         imageView=(ImageView)findViewById(R.id.image1);
         txt=(TextView)findViewById(R.id.textView);
         textView=(TextView)findViewById(R.id.textView7);

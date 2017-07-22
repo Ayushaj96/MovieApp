@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textColor="#1e288f"
+        android:textColor="@color/blue"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@+id/imageView"
         android:layout_marginStart="15dp" />
