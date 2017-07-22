@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -26,6 +27,7 @@ EditText editText;
     ImageView imageView,imageView2,imageView3,imageView4;
     movie m;
     TextView textView,txt,textView2;
+    boolean flag=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +42,19 @@ EditText editText;
         imageView2=(ImageView)findViewById(R.id.imageView2);
         imageView4=(ImageView)findViewById(R.id.imageView4);
 
-
-
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name=editText.getText().toString();
                 Log.i("myapp1",""+name);
+
+//                if(flag==true)
+//                {
+//                    imageView4.setImageResource(R.drawable.star);
+//                    new Download().execute("https://api.themoviedb.org/3/search/movie?query="+name+"&api_key=55957fcf3ba81b137f8fc01ac5a31fb5" );
+//                }
+//                else
+//                    Toast.makeText(SearchActivity.this, "No Information found", Toast.LENGTH_SHORT).show();
 
                 imageView4.setImageResource(R.drawable.star);
                 new Download().execute("https://api.themoviedb.org/3/search/movie?query="+name+"&api_key=55957fcf3ba81b137f8fc01ac5a31fb5" );
