@@ -1,11 +1,15 @@
 package com.aj.viewpagertab;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -36,6 +40,17 @@ EditText editText;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         editText=(EditText)findViewById(R.id.editText);
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if (actionId == EditorInfo.IME_ACTION_SEND) {
+                    sendMessage();
+                    return  true;
+                }
+                return false;
+            }
+        });
         editText.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
@@ -57,6 +72,7 @@ EditText editText;
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 name=editText.getText().toString();
                 Log.i("myapp1",""+name);
                  txt2.setText("PLOT-");
@@ -68,7 +84,18 @@ EditText editText;
 
     }
 
+void sendMessage()
+{editText.clearFocus();
 
+    InputMethodManager in = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+    in.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+    name=editText.getText().toString();
+    Log.i("myapp1",""+name);
+    txt2.setText("PLOT-");
+    imageView4.setImageResource(R.drawable.star);
+    new Download().execute("https://api.themoviedb.org/3/search/movie?query="+name+"&api_key=55957fcf3ba81b137f8fc01ac5a31fb5" );
+
+}
     public class Download extends AsyncTask<String, Void, String> {
 
 
