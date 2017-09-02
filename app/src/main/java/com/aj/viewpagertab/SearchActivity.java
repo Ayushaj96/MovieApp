@@ -4,11 +4,11 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -21,22 +21,34 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
 EditText editText;
     ImageView imageView,imageView2,imageView3,imageView4;
     movie m;
-    TextView textView,txt,textView2;
+    TextView textView,txt,textView2,txt2;
     boolean flag=true;
+    String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         editText=(EditText)findViewById(R.id.editText);
+        editText.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                v.setFocusable(true);
+                v.setFocusableInTouchMode(true);
+                return false;
+            }
+        });
         textView=(TextView)findViewById(R.id.textView8);
         txt=(TextView)findViewById(R.id.about);
         textView2=(TextView)findViewById(R.id.textView9);
-
+       txt2=(TextView)findViewById(R.id.plot);
         imageView=(ImageView)findViewById(R.id.imageView);
         imageView3=(ImageView)findViewById(R.id.image1);
         imageView2=(ImageView)findViewById(R.id.imageView2);
@@ -45,17 +57,9 @@ EditText editText;
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name=editText.getText().toString();
+                name=editText.getText().toString();
                 Log.i("myapp1",""+name);
-
-//                if(flag==true)
-//                {
-//                    imageView4.setImageResource(R.drawable.star);
-//                    new Download().execute("https://api.themoviedb.org/3/search/movie?query="+name+"&api_key=55957fcf3ba81b137f8fc01ac5a31fb5" );
-//                }
-//                else
-//                    Toast.makeText(SearchActivity.this, "No Information found", Toast.LENGTH_SHORT).show();
-
+                 txt2.setText("PLOT-");
                 imageView4.setImageResource(R.drawable.star);
                 new Download().execute("https://api.themoviedb.org/3/search/movie?query="+name+"&api_key=55957fcf3ba81b137f8fc01ac5a31fb5" );
 
@@ -100,7 +104,7 @@ EditText editText;
 
         @Override
         protected void onPostExecute(String s) {    //specify UI updation Logic/
-
+          final  ArrayList<movie> arr=new ArrayList<>();
             try {
 
                 JSONObject data = new JSONObject(s);
@@ -117,20 +121,21 @@ EditText editText;
                     m.setPoster_path(p.getString("poster_path"));
 
 
+
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            txt.setText(m.getOverview());
-                            textView2.setText(String.valueOf(m.getVote_average()));
-                            //tv1.setText(m.getRelease_date());
-                            textView.setText(m.getTitle());
-                            Picasso.with(getApplicationContext()).load("https://image.tmdb.org/t/p/w780/" + m.getBackdrop_path()).into(imageView3);
-                            Picasso.with(getApplicationContext()).load("https://image.tmdb.org/t/p/w780/" + m.getPoster_path()).into(imageView);
-                            Log.i("myapp1", "" + m.getPoster_path());
+                                txt.setText(m.getOverview());
+                                textView2.setText(String.valueOf(m.getVote_average()));
+                                //tv1.setText(m.getRelease_date());
+                                textView.setText(m.getTitle());
+                                Picasso.with(getApplicationContext()).load("https://image.tmdb.org/t/p/w780/" + m.getBackdrop_path()).into(imageView3);
+                                Picasso.with(getApplicationContext()).load("https://image.tmdb.org/t/p/w780/" + m.getPoster_path()).into(imageView);
+
                         }
                     });
-
                 }
+
             } catch (Exception e) {
                 Log.i("myapp", "fault:" + e.getMessage());
             }

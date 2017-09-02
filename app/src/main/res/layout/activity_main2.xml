@@ -42,13 +42,37 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/image1" />
-                <ImageView
-                    android:id="@+id/image"
-                    android:layout_below="@+id/textView"
-                    android:scaleType="fitXY"
-                    android:layout_marginLeft="8dp"
+                <RelativeLayout
+                    android:id="@+id/rl2"
                     android:layout_width="140dp"
-                    android:layout_height="140dp" />
+                    android:layout_height="190dp"
+                    android:layout_below="@+id/textView">
+                    <ImageView
+                        android:id="@+id/image"
+                        android:scaleType="fitXY"
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        />
+
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/image"
+                        android:background="@drawable/ajj"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl2"
+                    android:id="@+id/plot"
+                    android:text="PLOT-"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"/>
+
                 <TextView
                     android:id="@+id/textView7"
                     android:textSize="16dp"
@@ -59,7 +83,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/image"/>
+                    android:layout_below="@+id/plot"/>
 
 
                 <ImageView
@@ -70,7 +94,7 @@
                     android:layout_marginStart="49dp"
                     android:layout_marginTop="55dp"
                     android:scaleType="fitXY"
-                    android:layout_toEndOf="@+id/image"
+                    android:layout_toEndOf="@+id/rl2"
                     app:srcCompat="@drawable/star" />
 
                 <TextView
