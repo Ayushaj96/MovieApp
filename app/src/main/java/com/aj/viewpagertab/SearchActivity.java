@@ -28,7 +28,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
-EditText editText;
+    EditText editText;
     ImageView imageView,imageView2,imageView3,imageView4;
     movie m;
     TextView textView,txt,textView2,txt2;
